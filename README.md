@@ -1,6 +1,10 @@
 # Polarizable-Ion-Model-for-LAMMPS
 The Polarizable Ion Model for molten salt is implemented in LAMMPS. The work is realted to a study of noble metal behaviors in molten salt, which has been submitted for the NURETH-21 meeting. 
 
+## TLDR
+
+Use pair style pim, fix style pimreg/cg, and kspace ewald for verified performance. 
+
 # Description of files:
 ## Extra-Pair
 
@@ -9,10 +13,6 @@ Contains two pair type. The pim and pim/lr pairstyle. The pim/lr style is not ve
 1. The pim pair use Ewald summation on the charge-charge interaction. The pim style should be used with the fix style pimreg_cg or pimreg/lr1 and the kspace ewald style. 
 
 2. The pim/lr style addionally includes the long range modeling for charge-dipole and dipole-dipole interaction. The pim/lr style needs to be used with fix style pimreg/cg/lr or pimreg/cg. For kspace, the pair should be used with ewald_cg or ewald_disp, read the code to determine their usage. 
-
-## TLDR
-
-Use pair style pim, fix style pimreg/cg, and kspace ewald for verified performance. 
 
 ## Extra-Fix
 
